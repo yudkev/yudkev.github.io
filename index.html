@@ -171,17 +171,19 @@
 			var sectionHeight = $('.jumbotron').height();
 			var navHeight = $('.navbar').height();
 			if ($(window).scrollTop() > 10) {	
-				$('.navbar-fixed-bottom')
-					.animate({
-					top: 0,
-					bottom: winHeight
-				}, 50).removeClass("navbar-fixed-bottom").addClass("navbar-fixed-top");
+				// $('.navbar-fixed-bottom')
+				// 	.animate({
+				// 	top: 0,
+				// 	bottom: winHeight
+				// }, 50)
+				$('.navbar').removeClass("navbar-fixed-bottom").addClass("navbar-fixed-top");
 			} else {
-				$('.navbar-fixed-top')
-					.animate({
-						bottom: 0,
-						top: sectionHeight - navHeight
-					}, 50).removeClass("navbar-fixed-top").addClass("navbar-fixed-bottom");
+				// $('.navbar-fixed-top')
+				// 	.animate({
+				// 		bottom: 0,
+				// 		top: sectionHeight - navHeight
+				// 	}, 50)
+				$('.navbar').removeClass("navbar-fixed-top").addClass("navbar-fixed-bottom");
 			}
 		});
 
