@@ -176,13 +176,13 @@
 					.animate({
 					top: 0,
 					bottom: winHeight
-				}, 0).addClass("navbar-fixed-top");
+				}, 1000).addClass("navbar-fixed-top");
 			} else {
 				$('.navbar-fixed-top').removeClass("navbar-fixed-top")
 					.animate({
 						bottom: 0,
 						top: sectionHeight - navHeight
-					}, 0).addClass("navbar-fixed-bottom")
+					}, 1000).addClass("navbar-fixed-bottom")
 			}
 		});
 
