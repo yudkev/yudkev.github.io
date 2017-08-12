@@ -141,6 +141,51 @@
 			threshold: 0
 		});
 
+
+
+		/**
+		* Scroll user below the fold on arrow click
+		* and add smooth scrolling effect
+		*/
+		$(function() {
+			$('.arrow-down').on('click', function() {
+		    var sectionHeight = $('.jumbotron').height();
+		    $('html,body').animate({
+		      scrollTop: sectionHeight
+		    }, 500)
+		  });
+		  $('.arrow-up').on('click', function() {
+		    $('html,body').animate({
+		      scrollTop: 0
+		    }, 500)
+		  });
+		});
+			/**
+		* Attach navbar to top of page upon initial scrolldown,
+		* return it to bottom of page upon scrolling back up,
+		* and simulate a Firefox-friendly animation.
+		* Classes are removed in different order to 
+		*/
+		$(window).scroll(function () {
+			var winHeight = $(window).height();
+			var sectionHeight = $('.jumbotron').height();
+			var navHeight = $('.navbar').height();
+			if ($(window).scrollTop() > 10) {	
+				$('.navbar-fixed-bottom')
+					.animate({
+					top: 0,
+					bottom: winHeight
+				}, 50).removeClass("navbar-fixed-bottom").addClass("navbar-fixed-top");
+			} else {
+				$('.navbar-fixed-top')
+					.animate({
+						bottom: 0,
+						top: sectionHeight - navHeight
+					}, 50).removeClass("navbar-fixed-top").addClass("navbar-fixed-bottom");
+			}
+		});
+
+
     /**
 		* Calculate difference between pageY coordinates 
 		* when first mousing over the button container and when
@@ -161,48 +206,9 @@
 		  });
 		});
 
-		/**
-		* Attach navbar to top of page upon initial scrolldown,
-		* return it to bottom of page upon scrolling back up,
-		* and simulate a Firefox-friendly animation.
-		* Classes are removed in different order to 
-		*/
-		$(window).scroll(function () {
-			var winHeight = $(window).height();
-			var sectionHeight = $('.jumbotron').height();
-			var navHeight = $('.navbar').height();
-			if ($(window).scrollTop() > 10) {	
-				$('.navbar-fixed-bottom')
-					.animate({
-					top: 0,
-					bottom: winHeight
-				}, 200).removeClass("navbar-fixed-bottom").addClass("navbar-fixed-top");
-			} else {
-				$('.navbar-fixed-top')
-					.animate({
-						bottom: 0,
-						top: sectionHeight - navHeight
-					}, 200).removeClass("navbar-fixed-top").addClass("navbar-fixed-bottom");
-			}
-		});
+	
 
-		/**
-		* Scroll user below the fold on arrow click
-		* and add smooth scrolling effect
-		*/
-		$(function() {
-			$('.arrow-down').on('click', function() {
-		    var sectionHeight = $('.jumbotron').height();
-		    $('html,body').animate({
-		      scrollTop: sectionHeight
-		    }, 1000)
-		  });
-		  $('.arrow-up').on('click', function() {
-		    $('html,body').animate({
-		      scrollTop: 0
-		    }, 1000)
-		  });
-		});
+		
 
 		/** 
 		* Credit to https://codepen.io/hendrysadrak/pen/ctgaz
