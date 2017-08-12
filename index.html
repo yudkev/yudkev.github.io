@@ -172,17 +172,17 @@
 			var sectionHeight = $('.jumbotron').height();
 			var navHeight = $('.navbar').height();
 			if ($(window).scrollTop() > 10) {	
-				$('.navbar-fixed-bottom').removeClass("navbar-fixed-bottom")
+				$('.navbar-fixed-bottom')
 					.animate({
 					top: 0,
 					bottom: winHeight
-				}, 1000).addClass("navbar-fixed-top");
+				}, 200).removeClass("navbar-fixed-bottom").addClass("navbar-fixed-top");
 			} else {
-				$('.navbar-fixed-top').removeClass("navbar-fixed-top")
+				$('.navbar-fixed-top')
 					.animate({
 						bottom: 0,
 						top: sectionHeight - navHeight
-					}, 1000).addClass("navbar-fixed-bottom")
+					}, 200).removeClass("navbar-fixed-top").addClass("navbar-fixed-bottom");
 			}
 		});
 

@@ -129,7 +129,6 @@ a {
 	animation-direction:  reverse;
 }
 
-
 /** 
 * Navbar 
 */ 
@@ -141,11 +140,11 @@ a {
 }
 
 .navbar-fixed-top {
-	transition: all 400ms ease-in-out;
+	transition: all 200ms ease-in;
 }
 
 .navbar-fixed-bottom {
-	transition: all 400ms ease-out;
+	transition: all 150ms ease-out;
 }
 
 .navbar .container {
@@ -236,6 +235,17 @@ a {
 	cursor: pointer;
 }
 
+.arrow-down:hover, .arrow-down:focus, .arrow-down:active {
+  -webkit-animation-name: arrow-wobble;
+  animation-name: arrow-wobble;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
 .arrow-up {
 	vertical-align: middle;
 	-webkit-transform: perspective(1px) translateZ(0);
@@ -257,16 +267,6 @@ a {
 }
 
 
-.arrow-down:hover, .arrow-down:focus, .arrow-down:active {
-  -webkit-animation-name: arrow-buzz;
-  animation-name: arrow-buzz;
-  -webkit-animation-duration: 0.15s;
-  animation-duration: 0.15s;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-}
 
 /** 
 * Second section
