@@ -140,11 +140,11 @@ a {
 }
 
 .navbar-fixed-top {
-	transition: all 200ms ease-in;
+	transition: all 200ms ease;
 }
 
 .navbar-fixed-bottom {
-	transition: all 150ms ease-out;
+	transition: all 150ms ease;
 }
 
 .navbar .container {
