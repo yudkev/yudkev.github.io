@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en" data-framework="angularjs">
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJS Microblog</title>
+		<link rel="stylesheet" href="style.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+		<style>
+			[ng-cloak] { 
+				display: none; 
+			}
+		</style>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	</head>
+	<body ng-app="postmvc">
+	<ng-view></ng-view>
+	<script type="text/ng-template" id="charts.html">
+		<div id="chartApp">
+			<header id="header">
+				<div class="header-title">
+					<div class="intro">
+						<h1>Chart Generator</h1>
+						<button class="button edit-button chart-switch" ng-click="column =! column">
+							<i class="material-icons">{{ chartType == pie ? 'timelapse' : 'insert_chart' }}</i>
+							{{ chartType == pie ? 'Pie Chart' : 'Column Chart' }}
+						</button>
+					</div>
+					<div class="options">
+						<div>
+							<button class="button edit-button" ng-click="editToggle(); " ng-class="{activeEdit: activeEdit}">
+								<i class="material-icons">edit</i> Axis titles
+							</button>
+							<button class="button edit-button" ng-click="editXCats =! editXCats; activeLabelEdit =! activeLabelEdit" ng-class="{activeEdit: activeLabelEdit}">
+								<i class="material-icons">edit</i> Labels
+							</button>
+							<button class="button edit-button" ng-click="paletteModal = !paletteModal; activeEdit =! activeEdit" ng-class="{activeEdit: activeEdit}">
+								<i class="material-icons">color_lens</i> Colors
+								<i class="material-icons">
+								{{ activeEdit ?  'arrow_drop_up' : 'arrow_drop_down'
+								}} </i>
+							</button>
+						</div>
+						<div class="modes">
+							<button class="button edit-button toggle-button" ng-click="showLabels = !showLabels; activeLabelToggle = !activeLabelToggle" ng-class="{activeToggle: activeLabelToggle}">
+								<i class="material-icons">{{ activeLabelToggle ? 'check' : ''}}</i> Hide Values
+							</button>	
+							 <button class="button edit-button toggle-button" ng-click="usePercents(); togglePercents =! togglePercents" ng-class="{activeToggle: togglePercents}">
+							 	<i class="material-icons">{{ togglePercents ? 'check' : ''}}</i> Use Percent
+							 </button>
+							 <button class="button edit-button toggle-button" ng-click="deleteModeOn =! deleteModeOn; toggleDelete =! toggleDelete" ng-class="{activeToggle: toggleDelete}">
+							 	Click to Delete 
+							 </button>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<div ng-if="paletteModal" class="modal palettes">
+				<div class="select-palette">
+					<div ng-repeat= "palette in colors" ng-hide="showOptions">
+						<div class="palette-container" ng-class="{selected: selectedPalette}" ng-click="changeColor($index); selectedPalette =! selectedPalette"> 
+							<div ng-repeat="legend in [] | range:5" style="background: {{ palette[$index] }};">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<section id="main" ng-cloak >
+				<!-- BEGIN VALUE INPUT -->
+				<form ng-submit="addVal()" autocomplete="off" ng-class="valueType" >
+					<input name="chartValInput" class="val-input" placeholder="Enter comma separated values (1, 2, 3)" ng-trim="true" ng-model="chartVal" ng-list = ", "/>
+					</form>
+				<div>
+				<!-- END VALUE INPUT -->
+
+				<!-- BEGIN Y-AXIS -->
+				<div class="yAxis">
+					<div class="yAxis-title">
+						<label ng-hide="editYLabel" ng-click="editYLabel = true; focus = true " class="axis-title"> 
+							{{ yAxisLabel.toString() }}
+							<span ng-hide="yAxisLabel.length">Click to enter title</span>
+						</label>
+						<div class="yAxis-title-form-container" ng-show="editYLabel">
+							<form ng-submit="addYLabel(); editYLabel = false">
+								<input id="myForm" type="text" class="val-input label-input" placeholder="Enter y-Axis title" ng-model="yLabel" autofocus ng-focus="editYLabel = true; focus = true" ng-blur="editYLabel = false; focus = true" />
+							</form>
+						</div>
+					</div>
+					<div ng-repeat="interval in yAxisIntervals track by $index" class="y-interval"  ng-if="chartVals.length">
+					 	<span> {{ interval }}<span ng-show="togglePercents">%</span></span>
+					</div>
+				</div>
+				<!-- END Y-AXIS -->
+
+				<!-- BEGIN COLUMN CHART -->
+				<div id="chart" ng-class="{deleteMode: deleteModeOn}"> 
+					<div class="column" ng-repeat="chartVal in chartVals track by $index" style="background: {{ colors[selectedIndex][$index] }}; height: {{ (chartVal / yAxis) * 290 }}px;" ng-class="valueType" ng-click="removeVal(chartVal)">
+						<label ng-hide="showLabels">
+						{{chartVal}}<span ng-show="togglePercents">%</span>
+						</label>
+					</div>
+				</div>
+				<!-- END COLUMNS -->
+
+				<!-- BEGIN X-AXIS CATEGORY LABELS -->
+				<div class="xAxis-labels">
+					<div class="xAxis-label-container">
+						<div ng-repeat="label in chartVals track by $index" ng-class="{deleteLabel: deleteModeOn}" ng-click = "removeVal(label)">
+							
+							{{ XCat[$index] ? XCat[$index] : 'Category ' + [$index+1] }} 
+							<span ng-class="{deleteMode: deleteModeOn}" class="icon-delete-label" ng-if="deleteModeOn">
+								<i class="material-icons">clear</i>
+							</span> 
+
+						</div>
+					</div>
+					<form ng-show="editXCats" ng-submit="addXCat(); editXCats = false" autocomplete="off" ng-show="editXCats = true">
+						<input class="val-input label-input" placeholder="Enter Comma-Separated X Axis Labels" ng-model="XCat" ng-trim="false" ng-value="string" ng-list = ','  />
+					</form>
+				</div>
+				<!-- END X-AXIS CATEGORY LABELS -->
+
+				<!-- BEGIN X-AXIS TITLE -->
+				<div class="xAxis-title">
+					<label class="axis-title" ng-hide="editXLabel" ng-click="editXLabel = true"> 
+						{{ xAxisLabel.toString() }} 
+						<span ng-hide="xAxisLabel.length">Click to enter title</span>
+					</label>
+					
+					<form ng-submit="addXLabel(); editXLabel = false" ng-show="editXLabel">
+						<input type="text" class="val-input label-input" ng-model="xLabel" placeholder="Enter x-axis label" autofocus />
+					</form>
+				</div>
+				<!-- END XAXIS TITLE -->
+			</div>
+
+			<!-- 
+			BEGIN PIE CHART
+			-->
+			<div ng-class="{chartType: pie}" ng-if="chartType = column">
+				<div id="pie-chart" ng-class="{deleteMode: deleteModeOn}"> 
+					<div class="pie-chart-container">
+
+					<!-- BEGIN SLICE RENDERING -->
+						<div ng-repeat="chartVal in valDistances track by $index" class="slice slice-{{ $index }}"
+						ng-mouseover="showTooltip=true; activeSlice = $index;" 
+						ng-mouseleave="showTooltip=false" ng-class="{deleted: deleted}">
+
+							<!-- 
+							BEGIN TOOLTIP 
+							-->
+							<div class="tooltip" ng-show="showTooltip">
+								<ul>
+									<li ng-repeat="item in chartVals track by $index" ng-class="{activeItem: activeSlice == $index}">
+										<span style="color: {{ colors[selectedIndex][$index] }}">
+											{{ XCat[$index] ? XCat[$index] : 'Category ' + [$index+1] }} </span>: {{ (item * 100) / sum | number: 2 }}% {{item}}
+									</li>
+								</ul>
+							</div>
+							<!-- END TOOLTIP -->
+
+							<!-- BEGIN COLOR RENDERING -->
+							<div ng-repeat="n in [] | range:percentVals[$index]">
+								<div class="degree degree-{{chartVal}}" style="background: {{ colors[selectedIndex][$parent.$index] }}; transform: rotate( {{ chartVal + n }}deg )"></div>
+							</div>
+							<!-- END COLOR RENDERING -->
+						</div>
+					<!-- END SLICE RENDERING -->
+					</div>
+
+					<!-- BEGIN PIE LEGEND -->
+					<div class="xAxis-label-container pie-labels" ng-class="chartType">
+						<div ng-repeat="label in chartVals track by $index" ng-click = "removeVal(chartVals[$index]);" ng-class="{deleteLabel: deleteModeOn}" >
+							<div style="background: {{ colors[selectedIndex][$index] }}"> </div>
+								{{ XCat[$index] ? XCat[$index] : 'Category ' + [$index+1] }}
+								<span ng-class="{deleteMode: deleteModeOn}" class="icon-delete-label" ng-if="deleteModeOn">
+								<i class="material-icons">clear</i>
+							</span>  
+							</div>
+						</div>
+					<!-- END PIE LEGEND -->
+					</div>
+					<!-- END PIE CHART -->
+				</section>
+			</div>
+		</div>
+	</script>
+
+	<script src="angular.js"></script>
+	<script src="angular-filter.min.js"></script>
+	<script src="angular-route.js"></script>
+	<script src="chartApp.js"></script>
+	<script src="chartCtrl.js"></script>
+	<script src="valStorage.js"></script>
+	</body>
+</html>

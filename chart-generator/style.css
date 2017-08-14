@@ -1,0 +1,673 @@
+* {
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	-webkit-text-rendering: optimizeLegibility;
+	-moz-text-rendering: optimizeLegibility;
+	text-rendering: optimizeLegibility;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+button {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: none;
+	font-size: 100%;
+	vertical-align: baseline;
+	font-family: inherit;
+	font-weight: inherit;
+	color: inherit;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	line-height: 1.4em;
+	background: #ada996;
+	background: -webkit-linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea); 
+	background: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea); 
+	margin: 0 auto;
+	font-weight: 300;
+}
+
+button,
+input[type="checkbox"] {
+	outline: none;
+}
+
+a {
+	text-decoration: none;
+	color: #00acc1;
+	transition: all 400ms;
+	font-weight: 800;
+}
+
+a:hover {
+	color: #ab47bc;
+}
+
+#chartApp {
+	margin: 40px auto 40px auto;
+	width: 50%;
+	position: relative;
+}
+
+/** 
+* Header
+*/ 
+
+header {
+	width: 100%;
+	text-align: center;
+}
+
+header p {
+	font-size: 14px;
+	text-align: left;
+	letter-spacing: 0.03em;
+}
+
+span.footnote {
+	font-size: 12px;
+	text-align:center;
+	display: block;
+	margin: 20px auto 15px auto;
+	line-height: 1.5;
+}
+
+.header-title {
+	padding: 15px 0 0 0;
+}
+
+header h1 {
+	font-size: 35px;
+	margin: 0 0 15px 0;
+	font-weight: 100;
+	text-align: left;
+	color: #00acc1;
+	display: block;
+	line-height: 0.8;
+	flex: 3;
+}
+
+header h2 {
+	text-align: left;
+	font-weight: 100;
+	color: #666;
+	font-size: 20px;
+}
+
+.intro {
+	 display: flex;
+	 justify-content: space-between; 
+	 flex-wrap: wrap;
+}
+
+/** 
+* Controls
+**/ 
+
+.button {
+	color: #555;
+	padding: 8px 15px;
+	margin: 0 10px 10px 0;
+	font-size: 12px;
+	font-weight: 500;
+	cursor: pointer;
+	white-space: nowrap;
+	flex: 1;
+	text-align: center;
+	max-width: 150px;
+	transition: all 800ms;
+	border-radius: 4px; 
+}
+
+.button > i {
+	font-size: 1.1em;
+	vertical-align: middle;
+	opacity: 0.5;
+}
+
+.edit-button {
+	background: rgba(255,255,255,0.3);
+	border-radius: 4px;
+	border: 1px solid #a5d3d8;
+}
+
+.chart-switch {
+	background: #00acc1;
+	color: #fff;
+	border: 0;
+	margin-right: 0;
+	max-width: 120px;
+	text-align: center;
+	align-self: flex-end;
+}
+
+.button-group {
+	padding: 0;
+	margin: 0;
+}
+
+.options {
+	display: flex; 
+	margin-top: 10px; 
+	justify-content: space-between; 
+	align-content: flex-start;
+	flex-wrap: wrap;
+}
+
+.options  {
+	flex: 1; 
+	align-self: flex-end; 
+	text-align: left;
+}
+
+.modes {
+	text-align: right; 
+	justify-content: flex-end;
+}
+
+.modes > .button {
+	max-width: 120px;
+	padding: 8px 8px;
+	margin-right: 0;
+	border-radius: 0;
+	border: 0;
+	flex: 1;
+}
+
+.activeEdit {
+	background: rgba(255,255,255,0.8);
+}
+
+.edit-button:hover {
+	background: #f6f6f6;
+}
+
+.toggle-button {
+	background: #e3e8e8;
+}
+
+.toggle-button:first-child {
+	margin-left: 0;
+}
+
+.toggle-button:hover {
+	background: #adc7ca;
+}
+
+.activeToggle {
+	background: #adc7ca;
+}
+
+/**
+* color palette select modal
+**/
+
+.modal {
+	height: auto; 
+	position: absolute; 
+	top: 100px; 
+	left: 110px;
+	z-index: 999; 
+	border-radius: 4px;
+	background: #f6f6f6;
+}
+
+.palettes {
+	min-width: 220px; 
+}
+
+.select-palette {
+	cursor: pointer; 
+	position: relative;
+}
+
+.select-header {
+	background: #ddd; 
+	font-weight: 400; 
+	text-align: left; 
+	font-size: 14px;
+}
+
+.palette-container {
+	display: flex; 
+	flex-direction: row;
+	margin: 10px 10px;
+	border-radius: 8px;
+}
+
+.palette-container:hover {
+	box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+.palette-container.selected {
+	box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+.palette-container.dimmed {
+	opacity: 0.5;
+}
+
+.palette-container > div {
+	flex: 1; 
+	height: 40px;
+	text-align: center;
+}
+
+.palette-container > div:first-child {
+	border-radius: 8px 0 0 8px;
+}
+
+.palette-container > div:last-child {
+	border-radius: 0 8px 8px 0;
+}
+
+/** 
+* inputs and labels
+**/ 
+
+.val-input {
+	position: relative;
+	margin: 0;
+	width: 100%;
+	min-height: 60px;
+	font-size: 15px;
+	border: none;
+	outline: none;
+	background: rgba(255, 255, 255, 0.4);
+	padding: 16px;
+	box-sizing: border-box;
+}
+
+.val-input::-webkit-input-placeholder {
+	color: #666;
+}
+
+.character-count {
+	color: #00c397;
+	font-size: 13px;
+	position: absolute;
+  	top: calc(1.7em - 1px);
+  	padding-left: 20px;
+}
+
+.axis-label {
+	font-weight: 100;
+	font-size: 20px;
+	color: #546e7a;
+	padding: 10px 0 0 15px;
+	display: inline-block;
+	width: auto;
+	text-align: left;
+	position: absolute;
+	left: 0;
+}
+
+.axis-title {
+	font-size: 14px; 
+	font-weight: 400; 
+	color: #454545;
+	margin-top: 10px;
+	display: block;
+	padding: 2px 0 0 5px;
+}
+
+
+.label-input {
+	position: absolute;
+	min-height: 20px;
+	margin: 10px auto;
+	padding: 5px 0;
+	text-align: center;
+	font-size: 14px; 
+	position: relative;
+	top: 0;
+	left: 0;
+	color: #666;
+	font-weight: 500; 
+	font-size: 14px;
+	background: rgba(255,255,255,0.4);
+}
+
+/** 
+* xAxis title and labels
+**/ 
+
+.xAxis-title {
+	text-align: center;
+}
+
+.xAxis-title label {
+	padding: 3px 0 3px 0;
+	letter-spacing: 0.035em;
+}
+
+.xAxis-title input {
+	padding: 5px 0 5px 0;
+}
+
+.deleteLabel {
+	cursor: pointer;
+	font-style: italic;
+}
+
+.deleteLabel:hover {
+	color: #555;
+}
+.xAxis-label-container {
+	display: flex; 
+	justify-content: center; 
+	font-size: 12px;
+}
+
+.xAxis-label-container > div {
+	max-width: 80px; 
+	margin: 0 1%; 
+	width: 100%;
+	text-align: center;
+}
+
+.xAxis-label-container > div > span {
+	display: block; 
+	height: 15px; 
+	width: 1px; 
+	height: 10px; 
+	margin: 5px auto 0 auto;
+}
+
+
+.xAxis-label-container > div > .icon-delete-label {
+	display: inline; 
+	background: #ccc; 
+	text-align: center; 
+	padding: 0px 2px 2px 2px; 
+	border-radius:4px; 
+	margin-top: -15px;
+}
+
+.icon-delete-label > i {
+	vertical-align: middle; 
+	display: inline-block; 
+	font-size: 1em;
+}
+
+/** 
+* yAxis title and intervals 
+**/
+
+.yAxis-title {
+	position: absolute;
+	top: 50%;
+	width: 280px;
+	padding: 0;
+	height: 20px;
+	text-align: center;
+	transform: rotate(-90deg) translate(25px, -150px);
+}
+
+.yAxis-title label {
+	padding: 3px 0 0 5px;
+	margin: 0;
+	z-index: 10;
+	position: relative;
+	letter-spacing: 0.035em;
+	top: 0;
+	left: -35px;
+	width: 315px;
+}
+
+.yAxis-title-form-container {
+	width: 340px;
+	max-width: 340px;
+	padding: 0;
+	text-align: center;
+	margin: 0;
+	height: 20px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 5;
+}
+
+.yAxis-title input {
+	margin: 0 auto;
+	width: 310px;
+	padding: 5px 0;
+	text-align: center;
+	font-size: 14px; 
+	position: relative;
+	top: 0;
+	left: -45px;
+	color: #666;
+	font-weight: 500; 
+	background: rgba(255,255,255,0.2);
+}
+
+.yAxis {
+	padding: 0;
+	margin: 0;
+	display: flex; 
+	flex-direction: column-reverse;
+	position: absolute;
+	transform: translate(-45px, -20px);
+	height: 362px;
+}
+
+.yAxis .y-interval {
+	flex: 1;
+	color: #666;
+	display: flex;
+	text-align: right;
+	font-size: 12px;
+	font-weight: 400;
+	white-space: nowrap;
+	min-width: 35px;
+	pointer-events: none;
+}
+
+.yAxis .y-interval:after {
+	content: '';
+	position: absolute;
+	display: inline-block;
+	height: 1px;
+	width: 10px;
+	margin-left: 40px;
+	margin-top: 14px;
+	background: #bababa;
+}
+
+.yAxis .y-interval span {
+	flex: 1;
+	align-self: flex-start;
+}
+
+
+.destroy {
+	opacity: 0;
+	margin: 0;
+	font-size: 1.25em !important;
+	color: #f2f2f2;
+	transition: color 0.2s ease-out;
+	cursor: pointer;
+	position: absolute;
+	bottom: 5px;
+	left: 31px;
+	cursor: pointer;
+	transition: all 800ms;
+}
+
+#chart {
+	display: flex; 
+	min-height: 320px;
+	max-height: 320px;
+	padding-top: 20px;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.3);
+	position: relative;
+	z-index: 99;
+}
+
+#chart:after {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 1px;
+	width: 100%;
+	background: #ccc;
+}
+
+#chart .column {
+	flex: 1; 
+	align-self: flex-end;
+	max-width: 80px;
+	margin: 0 1%;
+	position: relative;
+	background: #ccc;
+	z-index: 999;
+	padding-top: 20px;
+	text-align: center;
+	opacity: 0.8;
+	transition: all 800ms;
+}
+
+.column:hover {
+	opacity: 0.7 !important;
+	color: #fff;
+}
+.column:hover .destroy {
+	opacity: 1;
+}
+
+.column label {
+	transition: all 800ms;
+}
+
+#chart.deleteMode .column:hover {
+	background: #ccc !important;
+	cursor:url(remove.gif), auto !important;
+}
+
+#chart.deleteMode .column:hover label {
+	color: #ccc !important;
+}
+
+#chart div label {
+	margin: -40px auto;
+	width: 100%;
+	display: block;
+	font-size: 12px;
+	font-weight: 700;
+	color: #333;
+}
+
+#pie-chart {
+	display: flex; 
+	min-height: 320px;
+	max-height: 320px;
+	padding-top: 20px;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.3);
+	position: relative;
+	z-index: 99;
+}
+
+.pie-chart-container {
+	margin: 0;
+	position: absolute; 
+	width: 254px; 
+	height: 254px; 
+	background: #ccc; 
+	border-radius: 100%; 
+}
+
+.degree {
+	position: absolute;
+	width: 2px;
+	height: 253px;
+	top: 0;
+	left: 126px;
+	clip-path: circle(124px at 8px 2px);
+}
+
+.slice > .tooltip {
+	position: absolute;
+	bottom: 125px;
+	z-index: 999;  
+	width: 120px; 
+	height: auto;
+	font-size: 12px;
+	margin-left: 10%;
+	background: #fff;
+	text-align: left;
+	border-radius: 5px;
+	cursor: default;
+}
+
+.activeItem {
+	font-weight: 800;
+}
+
+.slice ul {
+	list-style-type: none;
+	padding-left: 5px;
+}
+
+button.percent {
+	color: #00acc1;	
+}
+
+.legend {
+	height: 25px;
+	margin: 2%;
+}
+
+/** 
+* pie chart legend
+**/
+
+.pie-labels {
+	margin-bottom: 5px;
+	position: absolute;
+	bottom: 0;
+	margin-top: -33px; 
+	width: 100%;
+	color: #333;
+	z-index: 99999;
+}
+
+.pie-labels div > div {
+	display: inline-block; 
+	width: 10px; 
+	height: 10px;
+}
+
+
+@media (max-width: 750px) {
+	#chartApp {
+		min-width: 90%;
+	}
+
+	#chart .column {
+		max-width: 50px;
+	}
+
+	.destroy {
+		left: 15px;
+	}
+}
+
+@media (max-width: 1155px) {
+	#chartApp {
+		width: 70% !important;
+	}
+}
