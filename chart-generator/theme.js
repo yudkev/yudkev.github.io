@@ -6,12 +6,12 @@ Highcharts.theme = {
     title: {
         style: {
             color: '#000',
-            font: 'bold 16px "Source Sans Pro", Arial, sans-serif'
+            font: '14px "Source Sans Pro", Arial, sans-serif'
         }
     },
     legend: {
         itemStyle: {
-            font: '9pt Source Sans Pro, Arial, sans-serif',
+            font: 'bold 9pt "Source Sans Pro", Arial, sans-serif',
             color: 'black'
         },
         itemHoverStyle:{
