@@ -6,7 +6,7 @@ Highcharts.theme = {
     title: {
         style: {
             color: '#000',
-            font: '14px "Source Sans Pro", Arial, sans-serif'
+            font: '16px "Source Sans Pro", Arial, sans-serif'
         }
     },
     legend: {
