@@ -9,6 +9,9 @@ Highcharts.theme = {
             font: '16px "Source Sans Pro", Arial, sans-serif'
         }
     },
+    credits: {
+        enabled: false
+    },
     legend: {
         itemStyle: {
             font: 'bold 9pt "Source Sans Pro", Arial, sans-serif',
