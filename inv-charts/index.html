@@ -18,6 +18,7 @@
 	<ng-view></ng-view>
 	<script type="text/ng-template" id="charts.html">
 		<div id="chartApp">
+		<a href="index2.html">Highcharts version</a>
 			<header id="header">
 				<div class="header-title">
 					<div class="intro">
@@ -26,7 +27,7 @@
 							<i class="material-icons">{{ chartType == pie ? 'timelapse' : 'insert_chart' }}</i>
 							{{ chartType == pie ? 'Pie Chart' : 'Column Chart' }}
 						</button>
-					</div>
+						</div>
 					<div class="options">
 						<div>
 							<button class="button edit-button" ng-click="editToggle(); " ng-class="{activeEdit: activeEdit}">
