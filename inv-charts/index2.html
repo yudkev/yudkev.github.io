@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" data-framework="angularjs">
+	<head>
+		<meta charset="utf-8">
+		<title>Chartfactory</title>
+		<link rel="stylesheet" href="style.css">
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+		<style>
+			[ng-cloak] {
+				display: none;
+			}
+		</style>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	</head>
+	<body ng-app="postmvc">
+	<ng-view></ng-view>
+	<script type="text/ng-template" id="charts.html">
+		<div id="chartApp">
+			<header id="header">
+				<div class="header-title">
+					<div class="intro">
+						<h1 class="title-alt">Chart Generator</h1>
+					</div>
+					<div class="options">
+						<div class="options-alt">
+							<button class="button toggle-button" ng-click="lineToggle(); toggleLine =! toggleLine" ng-class="{activeToggle: toggleLine}">
+								<i class="material-icons">show_charts</i>Line
+							</button>
+							<button class="button toggle-button" ng-click="pieToggle(); togglePie =! togglePie" ng-class="{activeToggle: togglePie}">
+								<i class="material-icons">pie_chart</i> Pie
+							</button>
+							<button class="button toggle-button" ng-click="columnToggle(); toggleColumn =! toggleColumn" ng-class="{activeToggle: toggleColumn}">
+								<i class="material-icons">insert_chart</i> Column
+							</button>
+							<button class="button toggle-button" ng-click="columnToggle(); toggleColumn =! toggleColumn" ng-class="{activeToggle: toggleColumn}">
+								<i class="material-icons">reorder</i> Stacked Column
+							</button>
+							<button class="button toggle-button" ng-click="areaToggle(); toggleArea =! toggleArea" ng-class="{activeToggle: toggleArea}">
+								<i class="material-icons">terrain</i> Area/Volume
+							</button>
+						</div>
+						<div style="height: 40px; width: 100%; max-height: 40px; margin: 20px 0">
+						<div class="modes" ng-if="activeLine" style="text-align: left">
+							<button class="button edit-button toggle-button" ng-click="legendToggle(); showLegend = !showLegend; activeLegendToggle = !activeLegendToggle" ng-class="{activeToggle: showLegend}">
+								<i class="material-icons">{{ activeLegendToggle ? 'check' : ''}}</i> Hide Legend
+							</button>
+							 <button class="button edit-button toggle-button" ng-click="labelToggle(); toggleLabels =! toggleLabels; activeLabelToggle = !activeLabel" ng-class="{activeToggle: toggleLabels}">
+							 	<i class="material-icons">{{ toggleLabels ? 'check' : ''}}</i> Hide Labels
+							 </button>
+						</div>
+						</div>
+					</div>
+				</div>
+			</header>
+		</div>
+			<div class="charts-container">
+				<div ng-if="activeLine" >
+					<iframe ng-if="!activeLegend" ng-hide="activeLabel" height='465' scrolling='no' title='WdqPbJ' src='http://codepen.io/yudkev/embed/WdqPbJ/?height=465&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe>
+					<iframe ng-if="activeLegend" height='465' scrolling='no' title='EoBMow' src='http://codepen.io/yudkev/embed/EoBMow/?height=465&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe>
+					<iframe ng-if="activeLabel" height='465' scrolling='no' title='rpEbwr' src='http://codepen.io/yudkev/embed/rpEbwr/?height=465&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
+					</iframe>
+				</div>
+				<div ng-if="activePie">
+					<iframe ng-if="!activeLegend" height='465' scrolling='no' title='Rxzddm' src='http://codepen.io/yudkev/embed/Rxzddm/?height=465&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe>
+					<iframe ng-if="activeLegend" height='465' scrolling='no' title='EoBJmO' src='http://codepen.io/yudkev/embed/EoBJmO/?height=465&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
+				</div>
+				<div ng-if="activeArea">
+					<iframe height='465' scrolling='no' title='oprOvm' src='http://codepen.io/yudkev/embed/oprOvm/?height=465&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe>
+				</div>
+
+			</div>
+				<section ng-cloak>
+				<!-- Line Charts -->
+
+				</section>
+			</div>
+	</script>
+
+	<script src="angular.js"></script>
+	<script src="angular-filter.min.js"></script>
+	<script src="angular-route.js"></script>
+	<script src="chartApp.js"></script>
+	<script src="chartCtrl.js"></script>
+	<script src="valStorage.js"></script>
+	</body>
+</html>
