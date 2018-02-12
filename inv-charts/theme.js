@@ -1,4 +1,4 @@
-import Highcharts from 'https://code.highcharts.com/stock/5.0.12/highstock.js';
+
 $(function() {
 Highcharts.theme = {
     //colors: ['#333333','#822f37','#005b9d','#822F37','#7a9ff7','#37BBE4'],
