@@ -1,8 +1,7 @@
 Highcharts.theme = {
     //colors: ['#333333','#822f37','#005b9d','#822F37','#7a9ff7','#37BBE4'],
     chart: {
-        marginTop: 0,
-        spacingTop: 0,
+        marginTop: 20,
         marginBottom: 20,
         plotBackgroundColor: 'transparent',
         backgroundColor: 'transparent',
@@ -14,7 +13,7 @@ Highcharts.theme = {
     credits: {
         enabled: false
     },
-    xAxis: [{
+    xAxis: {
         tickLength: 0,
         lineWidth: 0,
         minorGridLineWidth: 0,
@@ -26,7 +25,7 @@ Highcharts.theme = {
             fontSize: '10px'
             }
         }
-    }],
+    },
     yAxis: [{
         gridLineColor: 'transparent',
         labels: {
@@ -57,7 +56,7 @@ Highcharts.theme = {
     legend: {
         enabled: false
     },
-    series: {
+    series: [{
         type: 'column',
         pointWidth: 35,
         dataLabels: {
@@ -67,9 +66,7 @@ Highcharts.theme = {
             valueSuffix: 'm'
         }
 
-    }
+    }]
 };
 
-// Apply the theme
 Highcharts.setOptions(Highcharts.theme);
-
