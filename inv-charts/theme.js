@@ -5,7 +5,8 @@ Highcharts.theme = {
         spacingTop: 0,
         marginBottom: 20,
         plotBackgroundColor: 'transparent',
-        backgroundColor: 'transparent'
+        backgroundColor: 'transparent',
+        type: 'column'
     },
     title: {
         text: '',
@@ -56,7 +57,7 @@ Highcharts.theme = {
     legend: {
         enabled: false
     },
-    series: [{
+    series: {
         type: 'column',
         pointWidth: 35,
         dataLabels: {
@@ -66,7 +67,7 @@ Highcharts.theme = {
             valueSuffix: 'm'
         }
 
-    }]
+    }
 };
 
 // Apply the theme
