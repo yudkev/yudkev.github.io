@@ -787,6 +787,114 @@ small.right {
     transform: translateY(-50%);
 }
 
+section.key-metrics-landing .kom-intro .kom-landing-info {
+  width: 100%;
+}
+
+.watchlist-chips.chip-wrapper .chip-container-watchlist {
+  background: #fff;
+  border-radius: 0;
+  padding: 0;
+}
+
+.watchlist-chips.chip-wrapper .chip-container-watchlist .chip-arrow.chip-arrow-right {
+  left: 88%;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+
+.watchlist-chips.chip-wrapper .chip-container-watchlist .chip-arrow {
+  background: #fff;
+  height: 70px;
+}
+
+.watchlist-chips.chip-wrapper .chip-container-watchlist .chip-arrow.chip-arrow-left {
+  left: 0;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+
+.key-metrics .kom-title-toggle div:first-child {
+  color: #333 !important;
+}
+}
+
+#company-chip-modal {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  z-index: 99999;
+  padding-top: 10px;
+}
+
+.chip-mobile {
+  min-height: 60px;
+  width: 90%;
+  border: 1px solid #ccc;
+  flex: 1;
+  margin: 7px auto;
+  background: #fff;
+  color: #666;
+  text-align: left;
+  max-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  transition: all 400ms;
+  border: 2px solid transparent;
+  box-shadow: 1px 1px 1px -1px rgba(0, 0, 0, 0.2), 20px 3px 3px -3px rgba(0, 0, 0, 0.01), 0px 1px 10px -1px rgba(0, 0, 0, 0.2);
+}
+
+.chip-mobile .chip-info {
+    border-right: 0px solid #e7e7e7;
+    -webkit-box-flex: 2;
+    flex-grow: 2;
+    padding: 8px;
+
+}
+
+.chip-mobile .chip-info h3 {
+  -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.1px;
+    margin: 0;
+    color: #111;
+}
+
+.chip-mobile .chip-info h3 > span {
+  display: block;
+    font-size: 14px;
+    letter-spacing: 0.4px;
+    line-height: 1.25;
+    font-weight: 400;
+    color: #666;
+  }
+
+.chip-mobile .chip-watchlist {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    max-width: 75px;
+    background: #fafafa;
+    text-align: center;
+    height: 100%;
+}
+
+.chip-mobile.selected-company,
+.chip-mobile:hover {
+  border: 2px solid rgba(0, 91, 157, 0.2);
+}
+.chip-mobile.selected-company div h3,
+.chip-mobile.selected-company div h3 span {
+    color: #005b9d !important;
+}
 </style>
 
 <section class="markets key-metrics key-metrics-landing">
@@ -805,8 +913,7 @@ small.right {
           <p class="kom-landing-info">
           Explore the Operational Metrics feature to learn more about what drives a company’s growth and stock price. Investopedia’s investing experts have closely examined research reports, public filings, and earnings transcripts to determine key metrics that provide deeper insight into a company beyond just its trailing financial metrics.
           </p>
-        <div class="columns">
-          <div class="col-80">
+
             <div class="chip-wrapper watchlist-chips">
               <div class="chip-container-watchlist">
                 <div class="chip-arrow chip-arrow-left">〈
@@ -1036,8 +1143,132 @@ small.right {
                 <div class="chip-arrow chip-arrow-right">
                   〉
                 </div>
+              </div>
+            </div>
+            <br>
+             <button id="kom-details-toggle" style="width: 95%; margin: 0 auto; display: block; padding: 10px" class="company-chip-modal-toggle">
+               <span>See All Companies</span>
+           </button>
+           <br>
+
+           <div id="company-chip-modal">
+              <div class="company-chip-modal-toggle" style="position: absolute; right: 0; margin-right: 20px; font-weight: 800; font-family: 'source sans pro'; font-size: 24px; color: #005b9d">X</div>
+
+
+            <div class="inv-title kom-landing-title" style="padding-left: 20px; margin-top: 25px">
+            <h1 style="font-size: 22px">Browse All Companies
+            </h1>
+            </div>
+
+            <div style="display: flex; flex-direction: column; height: 300px; margin-top: 25px">
+              <div class="chip-mobile selected-company">
+                <div class="chip-info">
+                    <h3>SBUX
+                      <span>Starbucks Corp</span>
+                    </h3>
+                  </div>
+                  <div class="chip-watchlist">
+                    <div class="inv-watchlist-icon inv-icon-plus" data-symbol="WSO" data-auto-submit="true" data-action-label="">
+                    </div>
+                  </div>
+              </div>
+              <div class="chip-mobile">
+                <div class="chip-info">
+                    <h3>AAPL
+                      <span>Apple Inc</span>
+                    </h3>
+                  </div>
+                  <div class="chip-watchlist">
+                    <div class="inv-watchlist-icon inv-icon-plus" data-symbol="WSO" data-auto-submit="true" data-action-label="">
+                    </div>
+                  </div>
+              </div>
+              <div class="chip-mobile">
+                <div class="chip-info">
+                    <h3>DIS
+                      <span>Disney Inc</span>
+                    </h3>
+                  </div>
+                  <div class="chip-watchlist">
+                    <div class="inv-watchlist-icon inv-icon-plus" data-symbol="WSO" data-auto-submit="true" data-action-label="">
+                    </div>
+                  </div>
+              </div>
+               <div class="chip-mobile">
+                <div class="chip-info">
+                    <h3>AAPL
+                      <span>Apple Inc</span>
+                    </h3>
+                  </div>
+                  <div class="chip-watchlist">
+                    <div class="inv-watchlist-icon inv-icon-plus" data-symbol="WSO" data-auto-submit="true" data-action-label="">
+                    </div>
+                  </div>
+              </div>
+               <div class="chip-mobile">
+                <div class="chip-info">
+                    <h3>AAPL
+                      <span>Apple Inc</span>
+                    </h3>
+                  </div>
+                  <div class="chip-watchlist">
+                    <div class="inv-watchlist-icon inv-icon-plus" data-symbol="WSO" data-auto-submit="true" data-action-label="">
+                    </div>
+                  </div>
+              </div>
+               <div class="chip-mobile">
+                <div class="chip-info">
+                    <h3>AAPL
+                      <span>Apple Inc</span>
+                    </h3>
+                  </div>
+                  <div class="chip-watchlist">
+                    <div class="inv-watchlist-icon inv-icon-plus" data-symbol="WSO" data-auto-submit="true" data-action-label="">
+                    </div>
+                  </div>
+              </div>
+              <div class="chip-mobile">
+                <div class="chip-info">
+                    <h3>SBUX
+                      <span>Starbucks Corp</span>
+                    </h3>
+                  </div>
+                  <div class="chip-watchlist">
+                    <div class="inv-watchlist-icon inv-icon-plus" data-symbol="WSO" data-auto-submit="true" data-action-label="">
+                    </div>
+                  </div>
+              </div>
+              <div class="chip-mobile">
+                <div class="chip-info">
+                    <h3>SBUX
+                      <span>Starbucks Corp</span>
+                    </h3>
+                  </div>
+                  <div class="chip-watchlist">
+                    <div class="inv-watchlist-icon inv-icon-plus" data-symbol="WSO" data-auto-submit="true" data-action-label="">
+                    </div>
+                  </div>
+              </div>
+              <div class="chip-mobile">
+                <div class="chip-info">
+                    <h3>SBUX
+                      <span>Starbucks Corp</span>
+                    </h3>
+                  </div>
+                  <div class="chip-watchlist">
+                    <div class="inv-watchlist-icon inv-icon-plus" data-symbol="WSO" data-auto-submit="true" data-action-label="">
+                    </div>
+                  </div>
+              </div>
+
+
 
             </div>
+           </div>
+
+           <hr>
+         <div class="columns">
+          <div class="col-80">
             <div class="kom-title-toggle">
               <div>
                 <h3 class="key-metrics-title">
@@ -1095,55 +1326,7 @@ small.right {
                 </div>
                 <p>iPhone sales drive over 60% of total net revenues for Apple. The company announced the iPhone X in September 2017 featuring facial recognition.</p>
             </div>
-            <div class="kom-summary-chart-container">
-              <div class="inv-annual-wrapper">
-                <div class="kom-summary-title">
-                    Service Revenue
-                    <span class="kom-val-label">
-                        $29.98M
-                        <span class="kom-val-negative">&nbsp;</span>
-                    </span>
-                  </div>
-                  <div id="metric-2-annual" style="height: 240px; width: 240px" data-highcharts-chart="3"><div id="highcharts-lcpidom-6" class="highcharts-container " style="position: relative; overflow: hidden; width: 240px; height: 240px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" class="highcharts-root" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240"><desc>Created with Highstock 5.0.12</desc><defs><clippath id="highcharts-lcpidom-7"><rect x="0" y="0" width="220" height="200" fill="none"></rect></clippath><clippath id="highcharts-lcpidom-15"><rect x="0" y="0" width="220" height="200" fill="none"></rect></clippath></defs><rect fill="transparent" class="highcharts-background" x="0" y="0" width="240" height="240" rx="0" ry="0"></rect><rect fill="transparent" class="highcharts-plot-background" x="10" y="20" width="220" height="200"></rect><g class="highcharts-grid highcharts-xaxis-grid "><path fill="none" class="highcharts-grid-line" d="M 53.5 20 L 53.5 220" opacity="1"></path><path fill="none" class="highcharts-grid-line" d="M 97.5 20 L 97.5 220" opacity="1"></path><path fill="none" class="highcharts-grid-line" d="M 141.5 20 L 141.5 220" opacity="1"></path><path fill="none" class="highcharts-grid-line" d="M 185.5 20 L 185.5 220" opacity="1"></path><path fill="none" class="highcharts-grid-line" d="M 229.5 20 L 229.5 220" opacity="1"></path><path fill="none" class="highcharts-grid-line" d="M 9.5 20 L 9.5 220" opacity="1"></path></g><g class="highcharts-grid highcharts-yaxis-grid "><path fill="none" stroke="transparent" stroke-width="1" class="highcharts-grid-line" d="M 10 220.5 L 230 220.5" opacity="1"></path><path fill="none" stroke="transparent" stroke-width="1" class="highcharts-grid-line" d="M 10 153.5 L 230 153.5" opacity="1"></path><path fill="none" stroke="transparent" stroke-width="1" class="highcharts-grid-line" d="M 10 87.5 L 230 87.5" opacity="1"></path><path fill="none" stroke="transparent" stroke-width="1" class="highcharts-grid-line" d="M 10 19.5 L 230 19.5" opacity="1"></path></g><g class="highcharts-grid highcharts-yaxis-grid "></g><rect fill="none" class="highcharts-plot-border" x="10" y="20" width="220" height="200"></rect><g class="highcharts-axis highcharts-xaxis "><path fill="none" class="highcharts-axis-line" d="M 10 220 L 230 220"></path></g><g class="highcharts-axis highcharts-yaxis "><path fill="none" class="highcharts-axis-line" d="M 10 20 L 10 220"></path></g><g class="highcharts-axis highcharts-yaxis "><path fill="none" class="highcharts-axis-line" d="M 10 20 L 10 220"></path></g><g class="highcharts-series-group"><g class="highcharts-series highcharts-series-0 highcharts-column-series highcharts-color-0 highcharts-tracker " transform="translate(10,20) scale(1 1)" clip-path="url(#highcharts-lcpidom-15)"><rect x="6.5" y="31.5" width="30" height="169" fill="#7cb5ec" stroke="#ffffff" stroke-width="1" class="highcharts-point highcharts-color-0 "></rect><rect x="50.5" y="39.5" width="30" height="161" fill="#7cb5ec" stroke="#ffffff" stroke-width="1" class="highcharts-point highcharts-color-0 "></rect><rect x="94.5" y="40.5" width="30" height="160" fill="#7cb5ec" stroke="#ffffff" stroke-width="1" class="highcharts-point highcharts-color-0 "></rect><rect x="138.5" y="21.5" width="30" height="179" fill="#7cb5ec" stroke="#ffffff" stroke-width="1" class="highcharts-point highcharts-color-0 "></rect><rect x="182.5" y="30.5" width="30" height="170" fill="#7cb5ec" stroke="#ffffff" stroke-width="1" class="highcharts-point highcharts-color-0 "></rect></g><g class="highcharts-markers highcharts-series-0 highcharts-column-series highcharts-color-0 " transform="translate(10,20) scale(1 1)" clip-path="none"></g></g><g class="highcharts-axis-labels highcharts-xaxis-labels "><text x="32" style="color:#666666;cursor:default;font-size:10px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">2012</text><text x="76" style="color:#666666;cursor:default;font-size:10px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1"></text><text x="120" style="color:#666666;cursor:default;font-size:10px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1"></text><text x="164" style="color:#666666;cursor:default;font-size:10px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1"></text><text x="208" style="color:#666666;cursor:default;font-size:10px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">2017</text></g><g class="highcharts-axis-labels highcharts-yaxis-labels "></g><g class="highcharts-axis-labels highcharts-yaxis-labels "></g><g class="highcharts-label highcharts-tooltip highcharts-color-0" style="cursor:default;pointer-events:none;white-space:nowrap;" transform="translate(1,-9999)" opacity="0" visibility="visible"><path fill="#FFF" class="highcharts-label-box highcharts-tooltip-box" d="M 0.5 0.5 L 72.5 0.5 C 72.5 0.5 72.5 0.5 72.5 0.5 L 72.5 37.5 C 72.5 37.5 72.5 37.5 72.5 37.5 L 36.5 37.5 30.5 43.5 24.5 37.5 0.5 37.5 C 0.5 37.5 0.5 37.5 0.5 37.5 L 0.5 0.5 C 0.5 0.5 0.5 0.5 0.5 0.5" stroke="#7cb5ec" stroke-width="1"></path></g></svg><div class="highcharts-label highcharts-tooltip" style="position: absolute; left: 1px; top: -9999px; opacity: 0; pointer-events: none; visibility: visible;"><span style="font-family: &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif; font-size: 12px; position: absolute; white-space: nowrap; color: rgb(51, 51, 51); margin-left: 0px; margin-top: 0px; left: 1px; top: 1px;" transform="translate(0,0)"><b>$633.17</b></span></div></div></div>
-              </div>
-              <div class="inv-quarterly-wrapper" style="">
-                  <div class="kom-summary-title">
-                    Service Revenue
-                    <span class="kom-val-label">
-                        $8.50M
-                        <span class="kom-val-positive">34.3%</span>
-                    </span>
-                  </div>
-                  <div id="metric-2" style="height: 240px; width: 240px" data-highcharts-chart="2"><div id="highcharts-lcpidom-4" class="highcharts-container " style="position: relative; overflow: hidden; width: 240px; height: 240px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" class="highcharts-root" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240"><desc>Created with Highstock 5.0.12</desc><defs><clippath id="highcharts-lcpidom-5"><rect x="0" y="0" width="220" height="200" fill="none"></rect></clippath><clippath id="highcharts-lcpidom-14"><rect x="0" y="0" width="220" height="200" fill="none"></rect></clippath></defs><rect fill="transparent" class="highcharts-background" x="0" y="0" width="240" height="240" rx="0" ry="0"></rect><rect fill="transparent" class="highcharts-plot-background" x="10" y="20" width="220" height="200"></rect><g class="highcharts-grid highcharts-xaxis-grid "><path fill="none" class="highcharts-grid-line" d="M 53.5 20 L 53.5 220" opacity="1"></path><path fill="none" class="highcharts-grid-line" d="M 97.5 20 L 97.5 220" opacity="1"></path><path fill="none" class="highcharts-grid-line" d="M 141.5 20 L 141.5 220" opacity="1"></path><path fill="none" class="highcharts-grid-line" d="M 185.5 20 L 185.5 220" opacity="1"></path><path fill="none" class="highcharts-grid-line" d="M 229.5 20 L 229.5 220" opacity="1"></path><path fill="none" class="highcharts-grid-line" d="M 9.5 20 L 9.5 220" opacity="1"></path></g><g class="highcharts-grid highcharts-yaxis-grid "><path fill="none" stroke="transparent" stroke-width="1" class="highcharts-grid-line" d="M 10 220.5 L 230 220.5" opacity="1"></path><path fill="none" stroke="transparent" stroke-width="1" class="highcharts-grid-line" d="M 10 153.5 L 230 153.5" opacity="1"></path><path fill="none" stroke="transparent" stroke-width="1" class="highcharts-grid-line" d="M 10 87.5 L 230 87.5" opacity="1"></path><path fill="none" stroke="transparent" stroke-width="1" class="highcharts-grid-line" d="M 10 19.5 L 230 19.5" opacity="1"></path></g><g class="highcharts-grid highcharts-yaxis-grid "></g><rect fill="none" class="highcharts-plot-border" x="10" y="20" width="220" height="200"></rect><g class="highcharts-axis highcharts-xaxis "><path fill="none" class="highcharts-axis-line" d="M 10 220 L 230 220"></path></g><g class="highcharts-axis highcharts-yaxis "><path fill="none" class="highcharts-axis-line" d="M 10 20 L 10 220"></path></g><g class="highcharts-axis highcharts-yaxis "><path fill="none" class="highcharts-axis-line" d="M 10 20 L 10 220"></path></g><g class="highcharts-series-group"><g class="highcharts-series highcharts-series-0 highcharts-column-series highcharts-color-0 highcharts-tracker" transform="translate(10,20) scale(1 1)" clip-path="url(#highcharts-lcpidom-14)"><rect x="6.5" y="41.5" width="30" height="159" fill="#7cb5ec" stroke="#ffffff" stroke-width="1" class="highcharts-point highcharts-color-0"></rect><rect x="50.5" y="35.5" width="30" height="165" fill="#7cb5ec" stroke="#ffffff" stroke-width="1" class="highcharts-point highcharts-color-0"></rect><rect x="94.5" y="15.5" width="30" height="185" fill="#7cb5ec" stroke="#ffffff" stroke-width="1" class="highcharts-point highcharts-color-0"></rect><rect x="138.5" y="25.5" width="30" height="175" fill="#7cb5ec" stroke="#ffffff" stroke-width="1" class="highcharts-point highcharts-color-0"></rect><rect x="182.5" y="39.5" width="30" height="161" fill="#7cb5ec" stroke="#ffffff" stroke-width="1" class="highcharts-point highcharts-color-0"></rect></g><g class="highcharts-markers highcharts-series-0 highcharts-column-series highcharts-color-0 " transform="translate(10,20) scale(1 1)" clip-path="none"></g></g><g class="highcharts-axis-labels highcharts-xaxis-labels "><text x="32" style="color:#666666;cursor:default;font-size:9px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">Q112</text><text x="76" style="color:#666666;cursor:default;font-size:9px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1"></text><text x="120" style="color:#666666;cursor:default;font-size:9px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1"></text><text x="164" style="color:#666666;cursor:default;font-size:9px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1"></text><text x="208" style="color:#666666;cursor:default;font-size:9px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">Q317</text></g><g class="highcharts-axis-labels highcharts-yaxis-labels "></g><g class="highcharts-axis-labels highcharts-yaxis-labels "></g></svg></div></div>
-              </div>
-              <p>The average selling price of Apple’s iPhones are important in driving revenues since iPhones represent over 60% of the company’s revenues.
-              </p>
-            </div>
-            <div class="kom-summary-chart-container" style="border-right: none">
-                <div class="inv-annual-wrapper">
-                    <div class="kom-summary-title">
-                      EBITDA Margin
-                      <span class="kom-val-label">
-                          31.2%
-                          <span class="kom-val-negative">&nbsp;</span>
-                      </span>
-                    </div>
-                    <div id="metric-3-annual" style="height: 240px; width: 240px" data-highcharts-chart="5"><div id="highcharts-lcpidom-10" class="highcharts-container " style="position: relative; overflow: hidden; width: 240px; height: 240px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" class="highcharts-root" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240"><desc>Created with Highstock 5.0.12</desc><defs><clippath id="highcharts-lcpidom-11"><rect x="0" y="0" width="220" height="200" fill="none"></rect></clippath><clippath id="highcharts-lcpidom-17"><rect x="0" y="0" width="220" height="200" fill="none"></rect></clippath></defs><rect fill="transparent" class="highcharts-background" x="0" y="0" width="240" height="240" rx="0" ry="0"></rect><rect fill="transparent" class="highcharts-plot-background" x="10" y="20" width="220" height="200"></rect><g class="highcharts-grid highcharts-xaxis-grid "><path fill="none" class="highcharts-grid-line" d="M 53.5 20 L 53.5 220" opacity="1"></path><path fill="none" class="highcharts-grid-line" d="M 97.5 20 L 97.5 220" opacity="1"></path><path fill="none" class="highcharts-grid-line" d="M 141.5 20 L 141.5 220" opacity="1"></path><path fill="none" class="highcharts-grid-line" d="M 185.5 20 L 185.5 220" opacity="1"></path><path fill="none" class="highcharts-grid-line" d="M 229.5 20 L 229.5 220" opacity="1"></path><path fill="none" class="highcharts-grid-line" d="M 9.5 20 L 9.5 220" opacity="1"></path></g><g class="highcharts-grid highcharts-yaxis-grid "><path fill="none" stroke="transparent" stroke-width="1" class="highcharts-grid-line" d="M 10 220.5 L 230 220.5" opacity="1"></path><path fill="none" stroke="transparent" stroke-width="1" class="highcharts-grid-line" d="M 10 153.5 L 230 153.5" opacity="1"></path><path fill="none" stroke="transparent" stroke-width="1" class="highcharts-grid-line" d="M 10 87.5 L 230 87.5" opacity="1"></path><path fill="none" stroke="transparent" stroke-width="1" class="highcharts-grid-line" d="M 10 19.5 L 230 19.5" opacity="1"></path></g><g class="highcharts-grid highcharts-yaxis-grid "></g><rect fill="none" class="highcharts-plot-border" x="10" y="20" width="220" height="200"></rect><g class="highcharts-axis highcharts-xaxis "><path fill="none" class="highcharts-axis-line" d="M 10 220 L 230 220"></path></g><g class="highcharts-axis highcharts-yaxis "><path fill="none" class="highcharts-axis-line" d="M 10 20 L 10 220"></path></g><g class="highcharts-axis highcharts-yaxis "><path fill="none" class="highcharts-axis-line" d="M 10 20 L 10 220"></path></g><g class="highcharts-series-group"><g class="highcharts-series highcharts-series-0 highcharts-column-series highcharts-color-0 highcharts-tracker " transform="translate(10,20) scale(1 1)" clip-path="url(#highcharts-lcpidom-17)"><rect x="6.5" y="117.5" width="30" height="83" fill="#7cb5ec" stroke="#ffffff" stroke-width="1" class="highcharts-point highcharts-color-0 "></rect><rect x="50.5" y="100.5" width="30" height="100" fill="#7cb5ec" stroke="#ffffff" stroke-width="1" class="highcharts-point highcharts-color-0 "></rect><rect x="94.5" y="87.5" width="30" height="113" fill="#7cb5ec" stroke="#ffffff" stroke-width="1" class="highcharts-point highcharts-color-0"></rect><rect x="138.5" y="46.5" width="30" height="154" fill="#7cb5ec" stroke="#ffffff" stroke-width="1" class="highcharts-point highcharts-color-0"></rect><rect x="182.5" y="59.5" width="30" height="141" fill="#7cb5ec" stroke="#ffffff" stroke-width="1" class="highcharts-point highcharts-color-0 "></rect></g><g class="highcharts-markers highcharts-series-0 highcharts-column-series highcharts-color-0 " transform="translate(10,20) scale(1 1)" clip-path="none"></g></g><g class="highcharts-axis-labels highcharts-xaxis-labels "><text x="32" style="color:#666666;cursor:default;font-size:10px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">2012</text><text x="76" style="color:#666666;cursor:default;font-size:10px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1"></text><text x="120" style="color:#666666;cursor:default;font-size:10px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1"></text><text x="164" style="color:#666666;cursor:default;font-size:10px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1"></text><text x="208" style="color:#666666;cursor:default;font-size:10px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">2017</text></g><g class="highcharts-axis-labels highcharts-yaxis-labels "></g><g class="highcharts-axis-labels highcharts-yaxis-labels "></g><g class="highcharts-label highcharts-tooltip highcharts-color-0" style="cursor:default;pointer-events:none;white-space:nowrap;" transform="translate(166,-9999)" opacity="0" visibility="visible"><path fill="#FFF" class="highcharts-label-box highcharts-tooltip-box" d="M 0.5 0.5 L 72.5 0.5 C 72.5 0.5 72.5 0.5 72.5 0.5 L 72.5 37.5 C 72.5 37.5 72.5 37.5 72.5 37.5 L 47.5 37.5 41.5 43.5 35.5 37.5 0.5 37.5 C 0.5 37.5 0.5 37.5 0.5 37.5 L 0.5 0.5 C 0.5 0.5 0.5 0.5 0.5 0.5" stroke="#7cb5ec" stroke-width="1"></path></g></svg><div class="highcharts-label highcharts-tooltip" style="position: absolute; left: 166px; top: -9999px; opacity: 0; pointer-events: none; visibility: visible;"><span style="font-family: &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif; font-size: 12px; position: absolute; white-space: nowrap; color: rgb(51, 51, 51); margin-left: 0px; margin-top: 0px; left: 1px; top: 1px;" transform="translate(0,0)"><b>$211.90</b></span></div></div></div>
-                </div>
-                <div class="inv-quarterly-wrapper" style="">
-                    <div class="kom-summary-title">
-                      EBITDA Margin
-                      <span class="kom-val-label">
-                          29.7%
-                          <span class="kom-val-negative">(-0.9%)</span>
-                      </span>
-                    </div>
-                    <div id="metric-3" style="height: 240px; width: 240px" data-highcharts-chart="4"><div id="highcharts-lcpidom-8" class="highcharts-container " style="position: relative; overflow: hidden; width: 240px; height: 240px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><svg version="1.1" class="highcharts-root" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240"><desc>Created with Highstock 5.0.12</desc><defs><clippath id="highcharts-lcpidom-9"><rect x="0" y="0" width="220" height="200" fill="none"></rect></clippath><clippath id="highcharts-lcpidom-16"><rect x="0" y="0" width="220" height="200" fill="none"></rect></clippath></defs><rect fill="transparent" class="highcharts-background" x="0" y="0" width="240" height="240" rx="0" ry="0"></rect><rect fill="transparent" class="highcharts-plot-background" x="10" y="20" width="220" height="200"></rect><g class="highcharts-grid highcharts-xaxis-grid "><path fill="none" class="highcharts-grid-line" d="M 53.5 20 L 53.5 220" opacity="1"></path><path fill="none" class="highcharts-grid-line" d="M 97.5 20 L 97.5 220" opacity="1"></path><path fill="none" class="highcharts-grid-line" d="M 141.5 20 L 141.5 220" opacity="1"></path><path fill="none" class="highcharts-grid-line" d="M 185.5 20 L 185.5 220" opacity="1"></path><path fill="none" class="highcharts-grid-line" d="M 229.5 20 L 229.5 220" opacity="1"></path><path fill="none" class="highcharts-grid-line" d="M 9.5 20 L 9.5 220" opacity="1"></path></g><g class="highcharts-grid highcharts-yaxis-grid "><path fill="none" stroke="transparent" stroke-width="1" class="highcharts-grid-line" d="M 10 220.5 L 230 220.5" opacity="1"></path><path fill="none" stroke="transparent" stroke-width="1" class="highcharts-grid-line" d="M 10 153.5 L 230 153.5" opacity="1"></path><path fill="none" stroke="transparent" stroke-width="1" class="highcharts-grid-line" d="M 10 87.5 L 230 87.5" opacity="1"></path><path fill="none" stroke="transparent" stroke-width="1" class="highcharts-grid-line" d="M 10 19.5 L 230 19.5" opacity="1"></path></g><g class="highcharts-grid highcharts-yaxis-grid "></g><rect fill="none" class="highcharts-plot-border" x="10" y="20" width="220" height="200"></rect><g class="highcharts-axis highcharts-xaxis "><path fill="none" class="highcharts-axis-line" d="M 10 220 L 230 220"></path></g><g class="highcharts-axis highcharts-yaxis "><path fill="none" class="highcharts-axis-line" d="M 10 20 L 10 220"></path></g><g class="highcharts-axis highcharts-yaxis "><path fill="none" class="highcharts-axis-line" d="M 10 20 L 10 220"></path></g><g class="highcharts-series-group"><g class="highcharts-series highcharts-series-0 highcharts-column-series highcharts-color-0 highcharts-tracker" transform="translate(10,20) scale(1 1)" clip-path="url(#highcharts-lcpidom-16)"><rect x="6.5" y="117.5" width="30" height="83" fill="#7cb5ec" stroke="#ffffff" stroke-width="1" class="highcharts-point highcharts-color-0"></rect><rect x="50.5" y="100.5" width="30" height="100" fill="#7cb5ec" stroke="#ffffff" stroke-width="1" class="highcharts-point highcharts-color-0"></rect><rect x="94.5" y="87.5" width="30" height="113" fill="#7cb5ec" stroke="#ffffff" stroke-width="1" class="highcharts-point highcharts-color-0"></rect><rect x="138.5" y="46.5" width="30" height="154" fill="#7cb5ec" stroke="#ffffff" stroke-width="1" class="highcharts-point highcharts-color-0"></rect><rect x="182.5" y="59.5" width="30" height="141" fill="#7cb5ec" stroke="#ffffff" stroke-width="1" class="highcharts-point highcharts-color-0"></rect></g><g class="highcharts-markers highcharts-series-0 highcharts-column-series highcharts-color-0 " transform="translate(10,20) scale(1 1)" clip-path="none"></g></g><g class="highcharts-axis-labels highcharts-xaxis-labels "><text x="32" style="color:#666666;cursor:default;font-size:9px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">Q112</text><text x="76" style="color:#666666;cursor:default;font-size:9px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1"></text><text x="120" style="color:#666666;cursor:default;font-size:9px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1"></text><text x="164" style="color:#666666;cursor:default;font-size:9px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1"></text><text x="208" style="color:#666666;cursor:default;font-size:9px;fill:#666666;" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">Q317</text></g><g class="highcharts-axis-labels highcharts-yaxis-labels "></g><g class="highcharts-axis-labels highcharts-yaxis-labels "></g></svg></div></div>
-                </div>
-                <p>
-                    EBITDA (Earnings Before Interest, Taxes, Depreciation, and Amortization) margin is an indicator of profitability for Apple's products and services. This is significant as rising profit margins are correlated with share price increases.
-                </p>
-            </div>
+
           </div>
         </div>
        <div class="columns kom-landing-section">
@@ -1188,10 +1371,16 @@ small.right {
       </div>
   </div>
 </div></div></div></div></section>
-
+<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
 <script>
-// This is bad and I feel bad for writing it
+
 $(document).ready(function() {
+  $('.company-chip-modal-toggle').on('click', function() {
+    $('#company-chip-modal').toggle();
+  });
   var chips = $('.chip-container-watchlist');
   var leftArrow = $('.chip-arrow-left');
   var rightArrow = $('.chip-arrow-right');
