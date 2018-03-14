@@ -1391,6 +1391,11 @@ $(document).ready(function() {
   $('.company-chip-modal-toggle').on('click', function() {
     $('#company-chip-modal').toggle();
   });
+  
+    $('.chip-mobile').on('click', function() {
+    $('#company-chip-modal').fadeToggle();
+  });
+  
   var chips = $('.chip-container-watchlist');
   var leftArrow = $('.chip-arrow-left');
   var rightArrow = $('.chip-arrow-right');
