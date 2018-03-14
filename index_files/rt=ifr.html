@@ -1,0 +1,33 @@
+
+<!-- saved from url=(0383)http://bcp.crwdcntrl.net/5/c=4736/rand=712104768/pv=y/seg=sites%5Einvestopedia%5Echannel%5Einsights/seg=sites%5Einvestopedia%5Esubchannel%5Emarkets%20%26%20economy/seg=sites%5Einvestopedia%5Etype%5Equote/seg=sites%5Einvestopedia%5Eadvertising%5Eactive%20trading/seg=sites%5Einvestopedia%5Esubadvertising%5Emarkets/seg=sites%5Einvestopedia%5Edfptarget%5Eactivetrading%2Fmarkets/rt=ifr -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" style="background-color:transparent; width: 100%; text-align: center;">
+<div><img src="./5907" width="1" height="1"><script>
+function processTargusData(json)
+{
+   if (json != null) {
+       if (json.targus != null) {
+            u = "";
+            v = "map";
+            if (json.targus.sk != null && json.targus.sk != "") {
+                u += "/tp=TARG/tpid=" + json.targus.sk;
+            }
+            if (json.targus.age != null && json.targus.age != "") {
+                u += "/genp=" + (new Date().getFullYear() - json.targus.age);
+                v = "5";
+            }
+            if (json.targus.gender != null && json.targus.gender != "") {
+                u += "/genp=gender%20-%20" + json.targus.gender;
+                v = "5";
+            }
+            if (u != "") {
+              var img = new Image();
+              img.src = "http://bcp.crwdcntrl.net/" + v + "/c=368" + u;
+              document.body.appendChild(img);
+            }
+        }
+   }
+}
+</script>
+<script src="./g.json"></script><iframe src="./px.html" frameborder="0" height="0" width="0" scrolling="no"></iframe></div><img src="./genp=gender - M">
+
+</body></html>
