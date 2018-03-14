@@ -741,7 +741,30 @@ section.markets .highcharts-tooltip>span, .highcharts-tooltip > span {
     border: none;
 }
 
+.key-metrics .new:after {
+    content: 'BETA';
+    position: absolute;
+    top: 45%;
+    left: 400px;
+    font-size: 9px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #fff;
+    margin: 0 0 0 5px;
+    background: #0063ad;
+    padding: 1px 6px;
+    border-radius: 100px;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.3);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
 @media screen and (max-width: 575px) {
+
+.key-metrics .new {
+  font-size: 20px;
+}
+
 .key-metrics .new:after {
     content: 'BETA';
     position: absolute;
