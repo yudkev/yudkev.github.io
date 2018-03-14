@@ -815,7 +815,8 @@ section.key-metrics-landing .kom-intro .kom-landing-info {
 
 .key-metrics .kom-title-toggle div:first-child {
   color: #333 !important;
-  }
+}
+
 .chip-wrapper .watchlist-chips {
   overflow-x: scroll; /* has to be scroll, not auto */
   -webkit-overflow-scrolling: auto;
@@ -826,7 +827,7 @@ section.key-metrics-landing .kom-intro .kom-landing-info {
   overflow-x: scroll; /* has to be scroll, not auto */
   -webkit-overflow-scrolling: auto;
 }
-  
+
 #company-chip-modal {
   display: none;
   position: absolute;
@@ -916,7 +917,7 @@ section.key-metrics-landing .kom-intro .kom-landing-info {
         </div>
         <div class="kom-landing-section kom-intro">
           <div class="inv-title kom-landing-title">
-            <h1 class="new">Key Operational Metrics
+            <h1 class="new">Operational Metrics to Watch
             </h1>
               <small class="right" style="position: absolute; right: 0; font-size: 13px; font-family: 'source sans pro'">Only on Investopedia</small>
           </div>
@@ -1291,6 +1292,17 @@ section.key-metrics-landing .kom-intro .kom-landing-info {
                   </div>
                   </span>
                 </h3>
+
+                <h3 class="key-metrics-title-alt" style="display: none">
+                  New Company
+                  <span class="quarterly">Q3 2017</span>
+                  <span class="annual tooltip-parent">
+                  FY 2017
+                  <div class="tooltip">
+                      <p>Financial Year</p>
+                  </div>
+                  </span>
+                </h3>
               </div>
               <div>
               <div class="right">
@@ -1391,11 +1403,20 @@ $(document).ready(function() {
   $('.company-chip-modal-toggle').on('click', function() {
     $('#company-chip-modal').toggle();
   });
-  
-    $('.chip-mobile').on('click', function() {
+
+  $('.chip-mobile').on('click', function() {
     $('#company-chip-modal').fadeToggle();
   });
-  
+
+  $('.chip').on('click', function() {
+    $(this).addClass('selected-company');
+    $(this).siblings('.selected-company').removeClass('selected-company');
+    $('.key-metrics-title').hide();
+    $('.key-metrics-title-alt').fadeIn();
+
+  });
+
+
   var chips = $('.chip-container-watchlist');
   var leftArrow = $('.chip-arrow-left');
   var rightArrow = $('.chip-arrow-right');
