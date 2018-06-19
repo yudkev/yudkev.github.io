@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Investopedia Component Library</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="generator" content="kss-node">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=source sans pro:400,700,300">
+    <link rel="shortcut icon" href="http://cdn.shopify.com/s/files/1/1976/0763/files/favicon_32x32.png?v=1505418735" type="image/png">
+    <link rel="stylesheet" href="kss-assets/vendor/prism.css">
+    <link rel="stylesheet" href="kss-assets/css/kss.css">
+    <link rel="stylesheet" href="../kss_styleguide/custom-template/kss-assets/css">
+
+  </head>
+
+  <body class="kss-body">
+    <div class="overlay"></div>
+
+
+    <!-- header. -->
+    <header class="kss-header">
+      <section class="kss-header__inner">
+        <a class="kss-header__hamburger-trigger">
+          <div class="kss-header__hamburger"></div>
+        </a>
+        <h1 class="kss-header__title kss-title"></h1>
+      </section>
+    </header>
+    <!-- /header. -->
+
+
+    <!-- navigation. -->
+    <section class="kss-navigation">
+      <a href="index.html">
+        <h1 class="kss-navigation__title kss-title"></h1>
+      </a>
+      <ul class="kss-nav">
+          <li class="kss-nav__item">
+            <a class="" href="section-colors.html">
+              <span class="kss-nav__name">Colors</span>
+            </a>
+          </li>
+          <li class="kss-nav__item">
+            <a class="" href="section-typography.html">
+              <span class="kss-nav__name">Typography</span>
+            </a>
+          </li>
+          <li class="kss-nav__item">
+            <a class="" href="section-buttons.html">
+              <span class="kss-nav__name">Buttons</span>
+            </a>
+          </li>
+          <li class="kss-nav__item">
+            <a class="" href="section-navigation.html">
+              <span class="kss-nav__name">Navigation</span>
+            </a>
+          </li>
+          <li class="kss-nav__item">
+            <a class="kss-state-active" href="section-controls.html">
+              <span class="kss-nav__name">Controls</span>
+            </a>
+                <ul class="kss-nav__subnav">
+                    <li class="kss-nav__item ">
+                      <a href="section-controls.html#kssref-controls-dropdowns">
+                        <span class="kss-nav__name">Dropdowns</span>
+                      </a>
+                    </li>
+                    <li class="kss-nav__item ">
+                      <a href="section-controls.html#kssref-controls-toggles">
+                        <span class="kss-nav__name">Toggles</span>
+                      </a>
+                    </li>
+                </ul>
+          </li>
+          <li class="kss-nav__item">
+            <a class="" href="section-content.html">
+              <span class="kss-nav__name">Content</span>
+            </a>
+          </li>
+          <li class="kss-nav__item">
+            <a class="" href="section-forms.html">
+              <span class="kss-nav__name">Forms</span>
+            </a>
+          </li>
+          <li class="kss-nav__item">
+            <a class="" href="section-special-content.html">
+              <span class="kss-nav__name">Special Content</span>
+            </a>
+          </li>
+          <li class="kss-nav__item">
+            <a class="" href="section-modals.html">
+              <span class="kss-nav__name">Modals</span>
+            </a>
+          </li>
+          <li class="kss-nav__item">
+            <a class="" href="section-tables.html">
+              <span class="kss-nav__name">Tables</span>
+            </a>
+          </li>
+      </ul>
+    </section>
+    <!-- /navigation. -->
+
+
+    <!-- documentation. -->
+    <section class="kss-documentation">
+
+        <!--
+          display each section, in order.
+          the "root" element comes first in this loop, and can be detected using
+          the "#if @first" block as seen below.
+        -->
+           <div style="position: fixed; top: 0; left: 0; width: 100%; padding-left: 1em; background: #88CDf2; color: #fff; height: 80px; z-index: 999; text-align: left; line-height: 1.2">
+               <h1 class="" style="padding-left: calc(10% + 3em);color: #fff; font-size: 2rem">
+                 Controls
+                </h1>
+              </div>
+
+            <article class="kss-section__content">
+               
+
+              <!-- Section links -->
+                <h1 class="kss-section__item kss-section__item--depth-1">
+                 
+                </h1>
+
+                <div class="kss-section__description"><p>Object oriented CSS. Begin using classes exclusively for agnostically named
+noncosmetic design patterns. This layer is mostly layout-driven.</p>
+</div>
+
+            </article>
+
+
+            </header>
+            <section class="kss-section kss-section--depth-2" id="kssref-controls-dropdowns">
+
+            <article class="kss-section__content">
+               
+
+              <!-- Section links -->
+                <h2 class="kss-section__item kss-section__item--depth-2">
+                 <span class="kss-section__name">Dropdowns</span>
+                </h2>
+
+
+            </article>
+
+              <article class="kss-section__modifiers">
+                <h1 class="kss-modifiers__heading"></h1>
+
+
+                <div class="kss-modifiers__example"><style>
+.dropmenu {
+    position: relative;
+    display: inline-block;
+    font-size: 13px;
+}
+
+.dropmenu > .title {
+    border-radius: 2px;
+    border: none;
+      padding: 6px 32px 5px 15px !important;
+    font-size: 12px;
+    font-weight: 400;
+    background-color: #f1f2f2;
+}
+.dropmenu > .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+    margin-top: -1px;
+    text-align: left;
+}
+
+.dropmenu > .title:after {
+    content: '';
+    position: absolute;
+    top: 13px;
+    right: 12px;
+    display: block;
+    border: 6px solid transparent;
+    border-top-color: #888;
+}
+</style>
+<div class="right">
+  <div class="dropmenu" id="date-range-select">
+    <div class="title">
+      <span class="drop-title">Annual</span>
+    </div>
+    <div class="menu date-range-menu">
+      <ul>
+        <li class="sort-list-item kom-date-range-quarterly">
+          Quarterly
+        </li>
+        <li class="sort-list-item kom-date-range-annual kom-date-range-hide">
+          Annual
+        </li>
+      </ul>
+    </div>
+  </div>
+</div></div>
+
+              </article>
+
+                 <article class="kss-section__markup">
+                  
+                </article>
+
+            </section>
+            <section class="kss-section kss-section--depth-2" id="kssref-controls-toggles">
+
+            <article class="kss-section__content">
+               
+
+              <!-- Section links -->
+                <h2 class="kss-section__item kss-section__item--depth-2">
+                 <span class="kss-section__name">Toggles</span>
+                </h2>
+
+
+            </article>
+
+              <article class="kss-section__modifiers">
+                <h1 class="kss-modifiers__heading"></h1>
+
+
+                <div class="kss-modifiers__example">Toggles</div>
+
+              </article>
+
+                 <article class="kss-section__markup">
+                  
+                </article>
+
+            </section>
+    </section>
+    <!-- /documentation. -->
+
+
+
+  <!-- scripts. -->
+  <script src="kss-assets/vendor/jquery.js"></script>
+  <script src="kss-assets/vendor/prism.js"></script>
+  <script src="kss-assets/js/kss.js"></script>
+  
+  <!-- /scripts. -->
+
+  </body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Investopedia Component Library</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="generator" content="kss-node">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=source sans pro:400,700,300">
+    <link rel="shortcut icon" href="http://cdn.shopify.com/s/files/1/1976/0763/files/favicon_32x32.png?v=1505418735" type="image/png">
+    <link rel="stylesheet" href="kss-assets/vendor/prism.css">
+    <link rel="stylesheet" href="kss-assets/css/kss.css">
+    <link rel="stylesheet" href="../kss_styleguide/custom-template/kss-assets/css">
+
+  </head>
+
+  <body class="kss-body">
+    <div class="overlay"></div>
+
+
+    <!-- header. -->
+    <header class="kss-header">
+      <section class="kss-header__inner">
+        <a class="kss-header__hamburger-trigger">
+          <div class="kss-header__hamburger"></div>
+        </a>
+        <h1 class="kss-header__title kss-title"></h1>
+      </section>
+    </header>
+    <!-- /header. -->
+
+
+    <!-- navigation. -->
+    <section class="kss-navigation">
+      <a href="index.html">
+        <h1 class="kss-navigation__title kss-title"></h1>
+      </a>
+      <ul class="kss-nav">
+          <li class="kss-nav__item">
+            <a class="" href="section-colors.html">
+              <span class="kss-nav__name">Colors</span>
+            </a>
+          </li>
+          <li class="kss-nav__item">
+            <a class="" href="section-typography.html">
+              <span class="kss-nav__name">Typography</span>
+            </a>
+          </li>
+          <li class="kss-nav__item">
+            <a class="" href="section-buttons.html">
+              <span class="kss-nav__name">Buttons</span>
+            </a>
+          </li>
+          <li class="kss-nav__item">
+            <a class="" href="section-navigation.html">
+              <span class="kss-nav__name">Navigation</span>
+            </a>
+          </li>
+          <li class="kss-nav__item">
+            <a class="" href="section-controls.html">
+              <span class="kss-nav__name">Controls</span>
+            </a>
+          </li>
+          <li class="kss-nav__item">
+            <a class="" href="section-content.html">
+              <span class="kss-nav__name">Content</span>
+            </a>
+          </li>
+          <li class="kss-nav__item">
+            <a class="" href="section-forms.html">
+              <span class="kss-nav__name">Forms</span>
+            </a>
+          </li>
+          <li class="kss-nav__item">
+            <a class="" href="section-special-content.html">
+              <span class="kss-nav__name">Special Content</span>
+            </a>
+          </li>
+          <li class="kss-nav__item">
+            <a class="" href="section-modals.html">
+              <span class="kss-nav__name">Modals</span>
+            </a>
+          </li>
+          <li class="kss-nav__item">
+            <a class="" href="section-tables.html">
+              <span class="kss-nav__name">Tables</span>
+            </a>
+          </li>
+      </ul>
+    </section>
+    <!-- /navigation. -->
+
+
+    <!-- documentation. -->
+    <section class="kss-documentation">
+
+        <!--
+          display each section, in order.
+          the "root" element comes first in this loop, and can be detected using
+          the "#if @first" block as seen below.
+        -->
+           <div style="position: fixed; top: 0; left: 0; width: 100%; padding-left: 1em; background: #88CDf2; color: #fff; height: 80px; z-index: 999; text-align: left; line-height: 1.2">
+               <h1 class="" style="padding-left: calc(10% + 3em);color: #fff; font-size: 2rem">
+                 Tabs
+                </h1>
+              </div>
+
+            <article class="kss-section__content">
+               
+
+              <!-- Section links -->
+                <h2 class="kss-section__item kss-section__item--depth-2">
+                 <span class="kss-section__name">Tabs</span>
+                </h2>
+
+
+            </article>
+
+              <article class="kss-section__modifiers">
+                <h1 class="kss-modifiers__heading"></h1>
+
+
+                <div class="kss-modifiers__example"><style>
+.validea-comparison .validea-tabset {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    width: 75%;
+    }
+
+    .validea-comparison .validea-tab.selected {
+    border: none;
+    border-bottom: 5px solid #005b9d;
+        color: #111;
+    }
+
+    .validea-comparison .validea-tab {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-top: 5px solid #bbb;
+    padding: 10px 15px;
+    color: #999;
+    margin-top: 15px;
+    line-height: 1.4em;
+    font-size: 14px;
+    display: -webkit-box;
+    display: flex;
+}
+
+    .validea-comparison .validea-tab {
+    width: 32%;
+    border: none;
+    border-bottom: 5px solid #bbb;
+    padding: 5px 0;
+    -webkit-box-ordinal-group: 2;
+    order: 1;
+    margin-bottom: 20px;
+    margin-top: 0;
+    cursor: pointer;
+}
+
+.validea-comparison .validea-tab-name {
+    font-weight: 700;
+    font-size: 15px;
+}
+</style>
+<div id="InvestmentStyle" class="validea-comparison">
+<div class="validea-tabset">
+                <div class="validea-tab js-validea-tab selected" data-tab-number="0" data-guru="John Neff">
+                    <div class="validea-tab-info-wrapper">
+                        <div class="validea-tab-name">
+                            Active Tab
+                        </div>
+                        <div class="validea-tab-type">
+                            Subtitle
+                        </div>
+
+                    </div>
+                    <div class="validea-tab-arrow-wrapper">
+                        <div class="validea-tab-arrow"></div>
+                    </div>
+                </div>
+                <div class="validea-tab-content js-validea-tab-content js-guru-info guru-info selected" data-tab-number="0">
+
+</div>
+
+                <div class="validea-tab js-validea-tab" data-tab-number="1" data-guru="Martin Zweig">
+                    <div class="validea-tab-info-wrapper">
+                        <div class="validea-tab-name">
+                            Tab 2
+                        </div>
+                        <div class="validea-tab-type">
+                            Subtitle
+                        </div>
+
+                    </div>
+                    <div class="validea-tab-arrow-wrapper">
+                        <div class="validea-tab-arrow"></div>
+                    </div>
+                </div>
+                <div class="validea-tab-content js-validea-tab-content js-guru-info guru-info" data-tab-number="1">
+
+</div>
+
+                <div class="validea-tab js-validea-tab" data-tab-number="2" data-guru="David Dreman">
+                    <div class="validea-tab-info-wrapper">
+                        <div class="validea-tab-name">Tab 3</div>
+                        <div class="validea-tab-type">Subtitle</div>
+
+                    </div>
+                    <div class="validea-tab-arrow-wrapper">
+                        <div class="validea-tab-arrow"></div>
+                    </div>
+                </div>
+                <div class="validea-tab-content js-validea-tab-content js-guru-info guru-info" data-tab-number="2"></div>
+
+    </div>
+   </div></div>
+
+              </article>
+
+                 <article class="kss-section__markup">
+                  
+                </article>
+
+            </header>
+    </section>
+    <!-- /documentation. -->
+
+
+
+  <!-- scripts. -->
+  <script src="kss-assets/vendor/jquery.js"></script>
+  <script src="kss-assets/vendor/prism.js"></script>
+  <script src="kss-assets/js/kss.js"></script>
+  
+  <!-- /scripts. -->
+
+  </body>
+</html>
